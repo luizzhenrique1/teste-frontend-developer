@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 // Adiciona a classe 'active' conforme solicitado
                 entry.target.classList.add('active');
-                
-                // Revelação única: para de observar após ativar
-                revealObserver.unobserve(entry.target);
+            } else {
+                // Remove a classe para permitir que a animação ocorra denovo
+                entry.target.classList.remove('active');
             }
         });
     }, observerOptions);

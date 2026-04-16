@@ -191,11 +191,13 @@ img {
   padding: 0 2rem;
 }
 .nav__logo {
+  display: block;
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 2px;
   color: #0a0a0a;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .nav__links {
   display: flex;
