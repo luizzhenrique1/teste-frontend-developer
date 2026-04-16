@@ -6,7 +6,7 @@ Landing page desenvolvida para o teste técnico da Ellos Design, focada em respo
 
 ---
 
-![Landing Page Vault](assets/img/vault.jpeg)
+![Landing Page Vault](vault.jpeg)
 
 ## 📈 Sobre o Projeto
 O Vault é uma interface de gestão financeira que prioriza a usabilidade e o desempenho. O projeto utiliza uma estética sóbria com efeitos de transparência e animações fluidas via JavaScript nativo.
