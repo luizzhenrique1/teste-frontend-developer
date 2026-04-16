@@ -68,4 +68,30 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('nav--scrolled');
         }
     });
+
+    // 5. Lógica de Scroll Spy (Destaque Automático da Navbar)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    const spyOptions = {
+        threshold: 0.5 // Destaque quando 50% da seção estiver visível
+    };
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                
+                // Remove destaque de todos os links
+                navLinks.forEach(link => {
+                    link.classList.remove('nav__link--active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('nav__link--active');
+                    }
+                });
+            }
+        });
+    }, spyOptions);
+
+    sections.forEach(section => spyObserver.observe(section));
 });
