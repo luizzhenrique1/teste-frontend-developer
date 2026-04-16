@@ -1,0 +1,37 @@
+// Vault Financial Platform - Design Tokens (Premium Moderno)
+// 1. Paleta de Cores
+$color-primary: #0066FF; // Vibrant Trust Blue
+$color-primary-dark: #0052CC;
+$color-secondary: #0a0a0a; // Deep Lead Gray for premium contrast
+$color-background: #ffffff;
+$color-surface: #f8fafc;
+$color-surface-accent: #f0f7ff; // New subtle blue for section backgrounds
+$color-text: #0f172a;
+$color-text-light: #64748b;
+$color-border: #e2e8f0;
+$color-on-primary: #ffffff;
+
+// 2. Tipografia
+$font-body: 'Inter', sans-serif;
+$font-headline: 'Inter', sans-serif;
+$font-label: 'Inter', sans-serif;
+$font-serif: 'Noto Serif', serif; // For the elegant footer logo
+
+// 3. Espaçamento e Bordas
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 20px; // Slightly more compact
+$border-radius-xl: 32px;
+$border-radius-full: 100px;
+
+$container-max-width: 1200px;
+
+// 4. Tokens de Glassmorphism (Efeito de Vidro)
+$glass-bg: rgba(255, 255, 255, 0.7);
+$glass-blur: 12px;
+$glass-border: rgba(255, 255, 255, 0.4);
+$glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+
+// 5. Transições
+$transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.2s ease;

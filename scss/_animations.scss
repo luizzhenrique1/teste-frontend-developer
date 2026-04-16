@@ -1,0 +1,51 @@
+// Linguagem de Movimento Vault - Profissional e Minimalista
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+  transition: 
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0) !important; // Ensure it overrides modifiers once active
+  }
+
+  // Variações de Direção
+  &--right {
+    transform: translateX(30px);
+  }
+
+  &--left {
+    transform: translateX(-30px);
+  }
+}
+
+// O atraso escalonado (stagger) é controlado via JS (inline styles),
+// mas garantimos que as classes base estejam prontas aqui.
+
+@keyframes buttonShine {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0px); }
+}

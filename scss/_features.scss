@@ -1,0 +1,78 @@
+.benefits {
+  padding: 100px 0;
+  background-color: $color-background;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Alterado para 2 colunas para melhores cards horizontais
+    gap: 2.5rem;
+    margin-top: 4rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+}
+
+.benefit-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: $border-radius-md;
+  transition: $transition-smooth;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: rgba($color-primary, 0.4);
+    transform: translateY(-8px); // Elevação sutil
+    box-shadow: 0 15px 40px rgba($color-primary, 0.1); // Efeito de brilho na borda
+    
+    .benefit-card__icon-box {
+      background-color: $color-primary;
+      color: white;
+      transform: scale(1.1);
+    }
+  }
+
+  &__icon-box {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: rgba($color-primary, 0.05);
+    color: $color-primary;
+    border-radius: $border-radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-fast;
+
+    .material-symbols-outlined {
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: $color-secondary;
+  }
+
+  p {
+    color: $color-text-light;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,140 @@
+.pre-footer {
+  padding: 100px 0;
+  background-color: $color-secondary;
+  color: white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 5rem;
+    line-height: 0.9;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+
+    @media (max-width: 768px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__box {
+    border: 1px solid rgba(255, 255, 255, 0.1); // Borda fina elegante
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: $border-radius-lg;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+
+    @media (max-width: 992px) {
+      margin-left: 0;
+      max-width: none;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    .btn {
+      align-self: flex-start;
+      padding: 1.2rem 3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+.footer {
+  background-color: $color-secondary;
+  color: white;
+  padding: 0 0 50px;
+
+  &__container {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 60px;
+  }
+
+  &__brand-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    &::before, &::after {
+      content: '';
+      height: 1px;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      max-width: 400px;
+    }
+  }
+
+  &__brand {
+    font-family: $font-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.4);
+    transition: $transition-fast;
+    
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__social, &__legal {
+    flex: 1;
+  }
+
+  &__legal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+  }
+
+  &__copyright {
+    flex: 2;
+    text-align: center;
+  }
+}

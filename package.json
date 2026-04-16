@@ -1,0 +1,13 @@
+{
+  "name": "vault-landing-page",
+  "version": "1.0.0",
+  "description": "Vault Financial Platform Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "sass:build": "sass scss/style.scss assets/css/style.css",
+    "sass:watch": "sass --watch scss/style.scss assets/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
+}

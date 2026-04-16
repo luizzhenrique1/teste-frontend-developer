@@ -1,0 +1,135 @@
+@import 'variables';
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-body;
+  background-color: $color-background;
+  background-image: url('../img/grid-pattern.svg');
+  background-size: 60px 60px;
+  color: $color-text;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-headline;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: $transition-fast;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: $font-label;
+  transition: $transition-smooth;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+// Mixin para Efeito Glassmorphism (Vidro)
+@mixin glass-effect {
+  background: $glass-bg;
+  backdrop-filter: blur($glass-blur);
+  -webkit-backdrop-filter: blur($glass-blur);
+  border: 1px solid $glass-border;
+  box-shadow: $glass-shadow;
+}
+
+// Estilos Globais de Botões
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: $transition-smooth;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &--primary {
+    background-color: $color-primary;
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-15deg);
+      transition: none;
+    }
+
+    &:hover {
+      background-color: $color-primary-dark;
+      
+      &::after {
+        animation: buttonShine 0.8s ease-in-out;
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: white;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    &:hover { background-color: rgba($color-primary, 0.05); }
+  }
+
+  &--outline {
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  &--full { width: 100%; }
+}
